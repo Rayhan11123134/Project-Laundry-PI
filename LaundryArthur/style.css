@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #0056b3;
+    --dark: #212529;
+    --light: #f8f9fa;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    margin: 0;
+    color: #444;
+}
+
+/* NAVBAR CUSTOM */
+.navbar {
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    background: #111; /* Fallback color */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(13, 110, 253, 0.5) 100%), 
+                url('https://static.vecteezy.com/system/resources/thumbnails/039/317/067/small_2x/ai-generated-basket-with-colored-laundry-for-washing-in-laundry-room-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 20 !important; /* Angka tinggi agar di depan wave */
+    max-width: 650px;
+}
+
+.badge-hero {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 7px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero-btn {
+    position: relative;
+    z-index: 21 !important; /* Paling depan */
+    border-radius: 50px;
+    padding: 12px 35px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    background-color: #fff;
+    color: var(--primary) !important;
+}
+
+/* WAVE - Perbaikan agar tidak menutupi teks */
+.wave {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    z-index: 5; /* Di atas background hero, tapi di bawah hero-content */
+    pointer-events: none;
+}
+
+/* CARD LAYANAN */
+.card-layanan {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow);
+}
+
+.card-layanan:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-layanan img {
+    height: 220px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* FEATURES */
+.feature-box {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.feature-box:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: #777;
+    padding: 60px 0 30px;
+    margin-top: 100px;
+}
+
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 100;
+    text-decoration: none;
+}
